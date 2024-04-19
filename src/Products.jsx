@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import "./ComponentCss/Products.css"
+
+import App from './components/Loader.jsx'
+import { CustomProvider } from 'rsuite';
 function Products() {
   const [products, setproducts] = useState([])
   const[productImage,setproductImage] = useState([])
   const[productPrice,setproductPrice] = useState([])
   const[productName,setproductName  ] = useState([])
+  const[prt,setprt] = useState(false)
   useEffect(() => {
     axios.get('https://dummyjson.com/products/')
       .then((res) => {
         console.log(res.data.products)
         setproducts(res.data.products)
+        setprt(true)
         // setproductImage(res.data.products.thumbnail)
         // setproductName(res.data.products.title)
         // setproductPrice(res.data.products.price)
@@ -22,6 +27,8 @@ function Products() {
     <>
       {/* hello */}
 
+        {
+          (prt)?
       <div id="products-wrapper">
         
         {
@@ -43,7 +50,13 @@ function Products() {
           })
 
         }
-      </div>
+      </div>:<>
+      <CustomProvider theme="dark">
+      <App />
+    </CustomProvider>
+     </>
+    
+      }
     </>
   )
 }
