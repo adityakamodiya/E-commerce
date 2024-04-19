@@ -8,11 +8,12 @@ function Header() {
     <>
       <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">LOGO</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#features">about</Nav.Link>
+            <Nav.Link href="#pricing">FAQ</Nav.Link>
+            <Nav.Link href="#pricing">Contact</Nav.Link>
       
           </Nav>
       <Search></Search>
