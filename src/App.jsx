@@ -3,11 +3,14 @@ import React from "react";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 import Products from "./Products.jsx";
 import Header from "./Header";
+import { NextUIProvider } from "@nextui-org/react";
 export default function App() {
   return (
-    <>
-    <Header/>
+    <>  
+    {/* <NextUIProvider> */}
+    {/* <Header/> */}
 <Products/>
+{/* </NextUIProvider> */}
     </>
   );
 }
