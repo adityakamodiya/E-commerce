@@ -1,27 +1,35 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import axios from 'axios'
 import "./ComponentCss/Products.css"
-
+import { Mycontext } from './RoutungPage'
 import App from './components/Loader.jsx'
 import { CustomProvider } from 'rsuite';
+
+
 function Products() {
+  const{searchitems,setsearchitems,setsearchtriger,searchcat,setsearchcat} = useContext(Mycontext)
   const [products, setproducts] = useState([])
-  const[productImage,setproductImage] = useState([])
-  const[productPrice,setproductPrice] = useState([])
-  const[productName,setproductName  ] = useState([])
   const[prt,setprt] = useState(false)
   useEffect(() => {
-    axios.get('https://dummyjson.com/products/')
+    
+    axios.get(`https://dummyjson.com/products/${''}`)
       .then((res) => {
-        console.log(res.data.products)
+        // console.log(res.data.products)
         setproducts(res.data.products)
         setprt(true)
-        // setproductImage(res.data.products.thumbnail)
-        // setproductName(res.data.products.title)
-        // setproductPrice(res.data.products.price)
 
       })
   }, [])
+    useEffect(()=>{
+    axios.get('https://dummyjson.com/products/categories')
+    .then((res)=>{
+      console.log(res.data)
+      setsearchitems(res.data)
+      setsearchtriger(true)
+
+    })
+  },[])
+
   // console.log(products)
   return (
     <>

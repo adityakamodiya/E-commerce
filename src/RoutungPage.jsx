@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import About from './About'
 import FAQ from './FAQ'
 import COntact from './COntact'
+import { createContext } from 'react'
 
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import App from './App'
+export const Mycontext = createContext(null);
+
 function RoutungPage() {
+    const [searchitems,setsearchitems] = useState()
+    const [searchtriger,setsearchtriger] = useState(false)
+    const[searchcat,setsearchcat] = useState('')
   return (
     <>
+    <Mycontext.Provider value={{searchitems,setsearchitems,searchtriger,setsearchtriger}}>
     <BrowserRouter>
     <Header></Header>
     <Routes>
@@ -21,6 +28,7 @@ function RoutungPage() {
 
     </Routes>
     </BrowserRouter>
+    </Mycontext.Provider>
     </>
   )
 }

@@ -3,16 +3,23 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import "../ComponentCss/search.css"
+import { Mycontext } from '../RoutungPage';
+import { useContext,useEffect } from 'react';
 
 export default function Search() {
+const{searchitems,setsearchitems,searchtriger,searchcat,setsearchcat} = useContext(Mycontext)
+// console.log(searchitems)
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (category) => {
     setAnchorEl(null);
     // alert("oops!!!!")
+    console.log("category/"+category)
+    setsearchcat(category)
   };
 
   return (
@@ -41,9 +48,16 @@ export default function Search() {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose}>category1</MenuItem>
-        <MenuItem onClick={handleClose}>category1</MenuItem>
-        <MenuItem onClick={handleClose}>category1</MenuItem>
+        {
+          (searchtriger)?
+           searchitems.map((category,index)=>{
+            return(
+        <MenuItem onClick={(e)=>{handleClose(category)}}>{category}</MenuItem>
+
+      )
+    }) :''
+  }
+   {/* <MenuItem onClick={handleClose}>category</MenuItem> */}
       </Menu>
     </div>
   );
