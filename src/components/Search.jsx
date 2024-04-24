@@ -4,9 +4,12 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import "../ComponentCss/search.css"
 import { Mycontext } from '../RoutungPage';
+import { useNavigate } from 'react-router-dom';
 import { useContext,useEffect } from 'react';
+import Products from '../Products';
 
 export default function Search() {
+  const navigate = useNavigate();
 const{searchitems,setsearchitems,searchtriger,searchcat,setsearchcat} = useContext(Mycontext)
 // console.log(searchitems)
 
@@ -14,12 +17,18 @@ const{searchitems,setsearchitems,searchtriger,searchcat,setsearchcat} = useConte
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    console.log("search"+searchcat)
+    navigate('/')
+
   };
   const handleClose = (category) => {
     setAnchorEl(null);
     // alert("oops!!!!")
     console.log("category/"+category)
     setsearchcat(category)
+       
+    navigate('/products')
+      
   };
 
   return (

@@ -9,7 +9,7 @@
     /* background-color: white; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
 
         padding: 0 1%;
     
@@ -19,6 +19,7 @@
     width: 26%;
     /* border: 1px solid; */
     display: flex;
+    margin-left:  5%;
     flex-direction: column;
     justify-content: center;
     /* padding: 0 1%; */

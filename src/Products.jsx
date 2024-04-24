@@ -1,25 +1,48 @@
 import React, { useEffect, useState,useContext } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 import "./ComponentCss/Products.css"
 import { Mycontext } from './RoutungPage'
 import App from './components/Loader.jsx'
 import { CustomProvider } from 'rsuite';
 
 
-function Products() {
+function  Products() {
+  const navigate = useNavigate()
   const{searchitems,setsearchitems,setsearchtriger,searchcat,setsearchcat} = useContext(Mycontext)
   const [products, setproducts] = useState([])
   const[prt,setprt] = useState(false)
+  
+  
+  // THIS USEEFFECT IS USED FOR SEARCHED BY CATEGORY
   useEffect(() => {
-    
-    axios.get(`https://dummyjson.com/products/${''}`)
+    // console.log(searchcat)
+    if(searchcat){
+      axios.get(`https://dummyjson.com/products/category/${searchcat}`)
       .then((res) => {
-        // console.log(res.data.products)
         setproducts(res.data.products)
         setprt(true)
+        setsearchcat('')
+        console.log(searchcat)
+        
+      })   
+    }
+    else{
+      // navigate('/')
 
-      })
+       axios.get(`https://dummyjson.com/products/?limit=100`)
+    .then((res) => {
+      // console.log(res.data.products)
+      setproducts(res.data.products)
+      setprt(true)
+
+    })
+  }
+
+     
   }, [])
+
+  // THIS IS CATEGORY SECTION
     useEffect(()=>{
     axios.get('https://dummyjson.com/products/categories')
     .then((res)=>{

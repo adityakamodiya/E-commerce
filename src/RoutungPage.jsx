@@ -8,6 +8,7 @@ import { createContext } from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import App from './App'
+import Products from './Products'
 export const Mycontext = createContext(null);
 
 function RoutungPage() {
@@ -16,12 +17,13 @@ function RoutungPage() {
     const[searchcat,setsearchcat] = useState('')
   return (
     <>
-    <Mycontext.Provider value={{searchitems,setsearchitems,searchtriger,setsearchtriger}}>
+    <Mycontext.Provider value={{searchitems,setsearchitems,searchtriger,setsearchtriger,searchcat,setsearchcat}}>
     <BrowserRouter>
     <Header></Header>
     <Routes>
 <Route path='/' element={<App/>} ></Route>
 <Route path='/cart' element={''}></Route>
+<Route path='/products' element={<Products/>}></Route>
 <Route path='/about' element={<About/>}></Route>
 <Route path='/faq' element={<FAQ/>}></Route>
 <Route path='/contact' element={<COntact/>}></Route>

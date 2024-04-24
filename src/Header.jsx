@@ -20,7 +20,9 @@ function Header() {
           </Nav>
       <Search></Search>
           {/* <input type="text" /> */}
+          
         </Container>
+
       </Navbar>
     </>
   );
