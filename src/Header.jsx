@@ -20,7 +20,7 @@ function Header() {
           </Nav>
       <Search></Search>
           {/* <input type="text" /> */}
-          
+          <Link to={'/cart'}>cart</Link>
         </Container>
 
       </Navbar>

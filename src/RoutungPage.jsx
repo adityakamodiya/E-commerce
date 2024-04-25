@@ -4,6 +4,7 @@ import About from './About'
 import FAQ from './FAQ'
 import COntact from './COntact'
 import { createContext } from 'react'
+import Cart from './Cart.jsx'
 
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
@@ -22,8 +23,9 @@ function RoutungPage() {
     <Header></Header>
     <Routes>
 <Route path='/' element={<App/>} ></Route>
-<Route path='/cart' element={''}></Route>
+<Route path='/cart' element={<Cart/>}></Route>
 <Route path='/products' element={<Products/>}></Route>
+
 <Route path='/about' element={<About/>}></Route>
 <Route path='/faq' element={<FAQ/>}></Route>
 <Route path='/contact' element={<COntact/>}></Route>

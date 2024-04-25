@@ -26,9 +26,13 @@
     align-items: center;
     /* margin: 5px 0; */
 }
-.detail .cart{
+.detail .cart {
+    font-size: 17px;
     display: none;
-
+    color: lightgoldenrodyellow;
+    padding: 2px 4px;
+    background: black;
+    border-radius: 5px;
 }
 .product:hover  .cart{
     display: block;

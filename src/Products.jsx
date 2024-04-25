@@ -23,7 +23,7 @@ function  Products() {
         setproducts(res.data.products)
         setprt(true)
         setsearchcat('')
-        console.log(searchcat)
+        // console.log(searchcat)
         
       })   
     }
@@ -46,12 +46,22 @@ function  Products() {
     useEffect(()=>{
     axios.get('https://dummyjson.com/products/categories')
     .then((res)=>{
-      console.log(res.data)
+      // console.log(res.data)
       setsearchitems(res.data)
       setsearchtriger(true)
 
     })
   },[])
+
+
+  function AddCart(product){
+console.log(product)
+let arr = [1,2,3,5,6]
+localStorage.setItem("cart",arr)
+
+console.log(localStorage.getItem("cart",arr).length)
+// arr.push(localStorage.getItem("cart",product.id))
+  }
 
   // console.log(products)
   return (
@@ -73,7 +83,7 @@ function  Products() {
                 <p className='product-price'>{"$"+product.price}</p>
                 </div>
                 <div className="cart-buy">
-                <button className='cart'>Add to cart</button></div>
+                <button className='cart'  onClick={(e)=>{AddCart(product)}}>Add to cart</button></div>
                 </div>
               </div>
 
