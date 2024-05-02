@@ -55,12 +55,7 @@ function  Products() {
 
 
   function AddCart(product){
-console.log(product)
-let arr = [1,2,3,5,6]
-localStorage.setItem("cart",arr)
-
-console.log(localStorage.getItem("cart",arr).length)
-// arr.push(localStorage.getItem("cart",product.id))
+    alert('login yourself for buy or adding cart')
   }
 
   // console.log(products)

@@ -16,6 +16,7 @@ function Header() {
             <Nav.Link><Link to='/about'>about</Link></Nav.Link>
             <Nav.Link><Link to='/faq'>FAQ</Link></Nav.Link>
             <Nav.Link><Link to='/contact'>Contact</Link></Nav.Link>
+            <Nav.Link><Link to='/login'>login</Link></Nav.Link>
       
           </Nav>
       <Search></Search>
