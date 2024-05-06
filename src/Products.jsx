@@ -3,8 +3,10 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import "./ComponentCss/Products.css"
 import { Mycontext } from './RoutungPage'
+import Discription from './components/Discription'
 import App from './components/Loader.jsx'
 import { CustomProvider } from 'rsuite';
+import { NextUIProvider } from "@nextui-org/react";
 
 
 function  Products() {
@@ -30,7 +32,7 @@ function  Products() {
     else{
       // navigate('/')
 
-       axios.get(`https://dummyjson.com/products/?limit=100`)
+       axios.get(`https://dummyjson.com/products/?limit=10`)
     .then((res) => {
       // console.log(res.data.products)
       setproducts(res.data.products)
@@ -57,7 +59,7 @@ function  Products() {
   function AddCart(product){
     alert('login yourself for buy or adding cart')
   }
-
+  
   // console.log(products)
   return (
     <>
@@ -78,7 +80,9 @@ function  Products() {
                 <p className='product-price'>{"$"+product.price}</p>
                 </div>
                 <div className="cart-buy">
-                <button className='cart'  onClick={(e)=>{AddCart(product)}}>Add to cart</button></div>
+                   <button className='cart'  onClick={(e)=>{AddCart(product)}}>Add to cart</button>
+                   <NextUIProvider><Discription  pr={product} ind={index}/></NextUIProvider>
+                </div>
                 </div>
               </div>
 
