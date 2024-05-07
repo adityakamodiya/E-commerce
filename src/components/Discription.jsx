@@ -1,6 +1,10 @@
 import React from "react";
+import { NextUIProvider } from "@nextui-org/react";
+import AccordionUsage from './Accordian'
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import "../ComponentCss/discripition.css"
+
+import Accordian from "./Accordian";
 
 export default function Discription(props) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -14,7 +18,7 @@ export default function Discription(props) {
     mod.style.height = ' 100vh';
     mod.style.top = '10%';
     // mod.style.boxShadow = '1px 1px 5px 5px black'
-    mod.style.zIndex = '1'
+    mod.style.zIndex = '2'
     console.log(props.pr)
     console.log(props.ind)
     if (props.pr) {
@@ -41,14 +45,17 @@ export default function Discription(props) {
                   <p>{'ratings:' + props.pr.rating}</p>
                 </div>
                 <div className="right">
-                  <h1>the product is</h1>
+                  <h1>Amazing...!!!</h1>
                   <p>{'price: $' + props.pr.price}</p>
                   <p>{'discount:' + props.pr.discountPercentage + "%"}</p>
                   <div className="buttons">
-                    <button onPress={''}>Add to cart</button><br />
+                    <button onClick={() => alert('hello')}>Add to cart</button><br />
                     <button>buy now</button>
                   </div>
                   <p>{'availability:' + props.pr.stock}</p>
+                  <div className="acc"><AccordionUsage/>
+                  </div>
+ 
                   <div className="footer">
                     <Button className="close" color="danger" variant="light" onPress={onClose}>
                       Close

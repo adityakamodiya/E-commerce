@@ -9,12 +9,13 @@
     background-color: rgba(49, 44, 44, 0.919);
     /* background-color: yellow; */
 }
-.content .left{
-    width: 50%;
-    border: 1px solid  yellow;
+.content .left {
+    width: 48%;
+    border: 1px solid #727069c9;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: -2px -2px 0px -2px;
     flex-direction: column;
     height: 100%;
 }
@@ -25,13 +26,13 @@
 }
 
 .content .right{
-    width: 50%;
+    width: 48%;
     border: 1px solid;
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    height: 100%;
+    height: auto;
 }
 .content .right .buttons{
     display: flex;

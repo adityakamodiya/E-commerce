@@ -52,7 +52,7 @@ function Login() {
     <>
       {/* <h1>this is log in page</h1> */}
       <div id="Log_In">
-        <form action="" onSubmit={(e) => log_in_user(e, username)} >
+        <form className='signup-form' action="" onSubmit={(e) => log_in_user(e, username)} >
           <input type="text" required onChange={(e) => setusername(e.target.value)} placeholder='   username' />
           <input type="password" required onChange={(e) => setpassword(e.target.value)} placeholder='   password' />
           <div className="submit-button">

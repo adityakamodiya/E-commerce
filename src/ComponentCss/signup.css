@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
 }
-form {         
+.signup-form {         
     padding: 7%;
     display: flex;
     border: 0px solid;
@@ -28,16 +28,16 @@ form {
     box-shadow: 0px 0px 10px -2px;
     transition: .5s all ease-in-out;
 }
-form:hover{
+.signup-form:hover{
     transform: scale(1.2);
     
   
 }
-form .age-section{
+.signup-form .age-section{
     display: flex;
     align-items: center;
 }
-form input{
+.signup-form input{
     margin: 3% 0;
     padding: 2% 0;
     border-radius: 5px;

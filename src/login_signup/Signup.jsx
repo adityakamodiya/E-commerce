@@ -59,7 +59,7 @@ function Signup() {
          {/* this is sign up page!! */}
          <div id="signup-wrapper">
 
-            <form action=""
+            <form action="" className='signup-form'
              onSubmit={UserAddToDataBase}
              >
                <input required type="text" className='Usrername' placeholder='  username' value={username} onChange={(e) => { setusername(e.target.value) }} />
